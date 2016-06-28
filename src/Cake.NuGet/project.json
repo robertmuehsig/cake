@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0-*",
+  "dependencies": {
+    "Cake.Core": { "target": "project" }
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "buildOptions": {
+        "define": [ "NETCORE" ]
+      },
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0"
+      }
+    },
+
+    "net45": {
+      "dependencies": {
+        "NuGet.Core": "2.8.6"
+      },
+      "frameworkAssemblies": {
+      }
+    },
+
+    "net462": {
+      "dependencies": {
+        "NuGet.Core": "2.8.6"
+      },
+      "frameworkAssemblies": {
+      }
+    }
+  }
+}

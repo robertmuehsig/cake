@@ -24,8 +24,10 @@ namespace Cake.Testing
             using (var writer = new StreamWriter(stream))
             {
                 writer.Write(content);
+#if !NETCORE
                 writer.Close();
                 stream.Close();
+#endif
                 return file;
             }
         }

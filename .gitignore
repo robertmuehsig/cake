@@ -8,6 +8,10 @@
 /[Aa]rtifacts/
 *.sln.ide/
 
+# Visual Studio
+.vs/
+.vscode/
+
 # Build related
 build-results/
 tools/Cake/

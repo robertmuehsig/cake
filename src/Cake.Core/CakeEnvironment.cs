@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.Versioning;
 using Cake.Core.IO;
+using Cake.Core.Polyfill;
 
 namespace Cake.Core
 {
@@ -80,6 +81,9 @@ namespace Cake.Core
         /// </returns>
         public DirectoryPath GetSpecialPath(SpecialPath path)
         {
+#if NETCORE
+            throw new NotSupportedException("Not supported on .NET Core.");
+#else
             switch (path)
             {
                 case SpecialPath.ApplicationData:
@@ -98,7 +102,8 @@ namespace Cake.Core
                     return new DirectoryPath(System.IO.Path.GetTempPath());
             }
             const string format = "The special path '{0}' is not supported.";
-            throw new NotSupportedException(string.Format(CultureInfo.InvariantCulture, format, path));
+            throw new NotSupportedException(string.Format(CultureInfo.InvariantCulture, format, path));            
+#endif
         }
 
         /// <summary>
@@ -179,7 +184,6 @@ namespace Cake.Core
             {
                 throw new CakeException("Working directory can not be set to a relative path.");
             }
-
             System.IO.Directory.SetCurrentDirectory(path.FullPath);
         }
     }

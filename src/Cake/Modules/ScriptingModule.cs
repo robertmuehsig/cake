@@ -4,10 +4,13 @@
 using System;
 using Cake.Core.Composition;
 using Cake.Core.Scripting;
+
+#if !NETCORE
 using Cake.Scripting.Mono;
 using Cake.Scripting.Roslyn;
 using Cake.Scripting.Roslyn.Nightly;
 using Cake.Scripting.Roslyn.Stable;
+#endif
 
 namespace Cake.Modules
 {
@@ -27,6 +30,7 @@ namespace Cake.Modules
                 throw new ArgumentNullException("registry");
             }
 
+#if !NETCORE
             // Are we running on Mono?
             var mono = _options.Mono;
             if (!mono)
@@ -57,6 +61,7 @@ namespace Cake.Modules
                     registry.RegisterType<DefaultRoslynNightlyScriptSessionFactory>().As<RoslynNightlyScriptSessionFactory>().Singleton();
                 }
             }
+#endif
         }
     }
 }

@@ -12,6 +12,7 @@ using Cake.Core.Modules;
 using Cake.Diagnostics;
 using Cake.Modules;
 using Cake.NuGet;
+using Cake.Polyfill;
 
 namespace Cake
 {
@@ -32,7 +33,7 @@ namespace Cake
             {
                 // Parse arguments.
                 var args = ArgumentTokenizer
-                    .Tokenize(Environment.CommandLine)
+                    .Tokenize(EnvironmentHelper.GetCommandLine())
                     .Skip(1) // Skip executable.
                     .ToArray();
 
@@ -62,9 +63,11 @@ namespace Cake
                     builder.Registry.RegisterModule(new ScriptingModule(options));
                     builder.Update(container);
 
+#if !NETCORE
                     // Load all modules.
                     var loader = container.Resolve<ModuleLoader>();
                     loader.LoadModules(container, options);
+#endif
 
                     // Resolve and run the application.
                     var application = container.Resolve<CakeApplication>();
