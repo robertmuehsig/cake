@@ -2,7 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-#if !NETCORE
 using System.Collections.Generic;
 using Cake.Core.Scripting;
 using Cake.Core.Scripting.CodeGen;
@@ -32,4 +31,3 @@ namespace Cake.Scripting.Roslyn
         }
     }
 }
-#endif

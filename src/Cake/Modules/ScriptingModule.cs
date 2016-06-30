@@ -5,7 +5,9 @@ using System;
 using Cake.Core.Composition;
 using Cake.Core.Scripting;
 
-#if !NETCORE
+#if NETCORE
+using Cake.Scripting.XPlat;
+#else
 using Cake.Scripting.Mono;
 using Cake.Scripting.Roslyn;
 using Cake.Scripting.Roslyn.Nightly;
@@ -30,7 +32,9 @@ namespace Cake.Modules
                 throw new ArgumentNullException("registry");
             }
 
-#if !NETCORE
+#if NETCORE
+            registry.RegisterType<XPlatScriptEngine>().As<IScriptEngine>().Singleton();
+#else
             // Are we running on Mono?
             var mono = _options.Mono;
             if (!mono)

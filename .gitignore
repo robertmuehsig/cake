@@ -11,6 +11,7 @@
 # Visual Studio
 .vs/
 .vscode/
+launchSettings.json
 
 # Build related
 build-results/

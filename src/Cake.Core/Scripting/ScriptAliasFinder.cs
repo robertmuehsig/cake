@@ -43,7 +43,7 @@ namespace Cake.Core.Scripting
                     {
                         foreach (var typeInfo in reference.DefinedTypes)
                         {
-                            var type = typeInfo.GetType();
+                            var type = typeInfo.AsType();
                             if (type.IsStatic())
                             {
                                 foreach (var method in GetAliasMethods(type))
