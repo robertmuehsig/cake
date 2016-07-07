@@ -2,9 +2,9 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
 
-using System.Collections.Generic;
 using Cake.Core.IO;
 using Cake.Core.Packaging;
+using System.Collections.Generic;
 
 namespace Cake.NuGet
 {
@@ -12,7 +12,7 @@ namespace Cake.NuGet
     /// Represents a file locator for NuGet packages that returns relevant
     /// files for the current framework given the resource type.
     /// </summary>
-    public interface INuGetPackageContentResolver
+    public interface INuGetContentResolver
     {
         /// <summary>
         /// Gets the relevant files for a NuGet package

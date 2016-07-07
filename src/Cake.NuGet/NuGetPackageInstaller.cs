@@ -1,6 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace Cake.NuGet
         private readonly ICakeEnvironment _environment;
         private readonly IProcessRunner _processRunner;
         private readonly INuGetToolResolver _toolResolver;
-        private readonly INuGetPackageContentResolver _contentResolver;
+        private readonly INuGetContentResolver _contentResolver;
         private readonly ICakeLog _log;
 
         /// <summary>
@@ -38,7 +39,7 @@ namespace Cake.NuGet
             ICakeEnvironment environment,
             IProcessRunner processRunner,
             INuGetToolResolver toolResolver,
-            INuGetPackageContentResolver contentResolver,
+            INuGetContentResolver contentResolver,
             ICakeLog log)
         {
             if (fileSystem == null)
@@ -141,6 +142,7 @@ namespace Cake.NuGet
             });
             process.WaitForExit();
 
+<<<<<<< 0feec18d15d9524997b50110651af12d514d4ba4
             var exitCode = process.GetExitCode();
             if (exitCode != 0)
             {
@@ -151,6 +153,17 @@ namespace Cake.NuGet
 
             // Return the files.
             return _contentResolver.GetFiles(packagePath, type);
+=======
+            // Get the files.
+            var result = _contentResolver.GetFiles(packagePath, type);
+            if(result.Count == 0)
+            {
+                var framework = _environment.GetTargetFramework();
+                _log.Warning("Could not find any assemblies compatible with {0}.", framework.ToString());
+            }
+
+            return result;
+>>>>>>> Refactored NuGet V2 stuff.
         }
 
         private FilePath GetNuGetPath()

@@ -20,7 +20,7 @@ namespace Cake.NuGet.Tests.Fixtures
         public IFileSystem FileSystem { get; set; }
         public IProcessRunner ProcessRunner { get; set; }
         public INuGetToolResolver ToolResolver { get; set; }
-        public INuGetPackageContentResolver ContentResolver { get; set; }
+        public INuGetContentResolver ContentResolver { get; set; }
         public ICakeLog Log { get; set; }
 
         public PackageReference Package { get; set; }
@@ -32,7 +32,7 @@ namespace Cake.NuGet.Tests.Fixtures
             Environment = FakeEnvironment.CreateUnixEnvironment();
             FileSystem = new FakeFileSystem(Environment);
             ProcessRunner = Substitute.For<IProcessRunner>();
-            ContentResolver = Substitute.For<INuGetPackageContentResolver>();
+            ContentResolver = Substitute.For<INuGetContentResolver>();
             Log = Substitute.For<ICakeLog>();
 
             ToolResolver = Substitute.For<INuGetToolResolver>();

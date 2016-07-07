@@ -6,12 +6,6 @@ using System;
 using Cake.Core.Composition;
 using Cake.Core.Packaging;
 
-#if !NETCORE
-using Cake.NuGet.V2;
-#else
-using Cake.NuGet.V3;
-#endif
-
 namespace Cake.NuGet
 {
     /// <summary>
@@ -33,15 +27,10 @@ namespace Cake.NuGet
 
 #if NETCORE
             // NuGet V3
-            registry.RegisterType<NuGetPackageContentResolver>().As<INuGetPackageContentResolver>().Singleton();
+            registry.RegisterType<V3.NuGetV3ContentResolver>().As<INuGetContentResolver>().Singleton();
 #else
             // NuGet V2
-            registry.RegisterType<NuGetVersionUtilityAdapter>().As<INuGetFrameworkCompatibilityFilter>().As<IFrameworkNameParser>().Singleton();
-            registry.RegisterType<NuGetPackageAssembliesLocator>().As<INuGetPackageAssembliesLocator>().Singleton();
-            registry.RegisterType<NuGetPackageReferenceBundler>().As<INuGetPackageReferenceBundler>().Singleton();
-            registry.RegisterType<NuGetAssemblyCompatibilityFilter>().As<INuGetAssemblyCompatibilityFilter>().Singleton();
-            registry.RegisterType<AssemblyFrameworkNameParser>().As<IAssemblyFrameworkNameParser>().Singleton();
-            registry.RegisterType<NuGetPackageContentResolver>().As<INuGetPackageContentResolver>().Singleton();
+            registry.RegisterType<V2.NuGetV2ContentResolver>().As<INuGetContentResolver>().Singleton();
 #endif
 
             // URI resource support.
