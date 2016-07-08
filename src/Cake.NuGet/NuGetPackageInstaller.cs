@@ -142,7 +142,6 @@ namespace Cake.NuGet
             });
             process.WaitForExit();
 
-<<<<<<< 0feec18d15d9524997b50110651af12d514d4ba4
             var exitCode = process.GetExitCode();
             if (exitCode != 0)
             {
@@ -151,19 +150,15 @@ namespace Cake.NuGet
                 _log.Verbose(Verbosity.Diagnostic, "Output:\r\n{0}", output);
             }
 
-            // Return the files.
-            return _contentResolver.GetFiles(packagePath, type);
-=======
             // Get the files.
             var result = _contentResolver.GetFiles(packagePath, type);
             if(result.Count == 0)
             {
-                var framework = _environment.GetTargetFramework();
-                _log.Warning("Could not find any assemblies compatible with {0}.", framework.ToString());
+                var framework = _environment.Runtime.TargetFramework;
+                _log.Warning("Could not find any assemblies compatible with {0}.", framework.FullName);
             }
 
             return result;
->>>>>>> Refactored NuGet V2 stuff.
         }
 
         private FilePath GetNuGetPath()

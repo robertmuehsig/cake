@@ -79,7 +79,7 @@ namespace Cake.NuGet.V2
         private IEnumerable<FilePath> FilterCompatibleAssemblies(
             IEnumerable<FilePath> assemblies, DirectoryPath packageDirectory)
         {
-            var targetFramework = _environment.GetTargetFramework();
+            var targetFramework = _environment.Runtime.TargetFramework;
 
             // standardize assembly paths as relative to package directory
             var standardizedAssemblyPaths =

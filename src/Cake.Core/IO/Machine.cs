@@ -9,27 +9,27 @@ using Cake.Core.Polyfill;
 
 namespace Cake.Core.IO
 {
-    /// <summary>
-    /// Responsible for retrieving information about the current machine.
-    /// </summary>
     internal static class Machine
     {
-        /// <summary>
-        /// Determines if the current operative system is 64 bit.
-        /// </summary>
-        /// <returns>Whether or not the current operative system is 64 bit.</returns>
         public static bool Is64BitOperativeSystem()
         {
             return EnvironmentHelper.Is64BitOperativeSystem();
         }
 
-        /// <summary>
-        /// Determines whether the current machine is running Unix.
-        /// </summary>
-        /// <returns>Whether or not the current machine is running Unix.</returns>
+        public static PlatformFamily GetPlatformFamily()
+        {
+            return EnvironmentHelper.GetPlatformFamily();
+        }
+
         public static bool IsUnix()
         {
-            return EnvironmentHelper.IsUnix();
+            return IsUnix(GetPlatformFamily());
+        }
+
+        public static bool IsUnix(PlatformFamily family)
+        {
+            return family == PlatformFamily.Linux
+                || family == PlatformFamily.OSX;
         }
     }
 }

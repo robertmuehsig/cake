@@ -21,11 +21,13 @@ namespace Cake.Core
         /// </summary>
         public CakeRuntime()
         {
-            // Try to get the current framework name from the current application domain,
-            // but if that is null, we default to .NET 4.5. The reason for doing this is
-            // that this actually is what happens on Mono.
-            var frameworkName = AppDomain.CurrentDomain.SetupInformation.TargetFrameworkName;
-            TargetFramework = new FrameworkName(frameworkName ?? ".NETFramework,Version=v4.5");
+#if NETCORE
+            TargetFramework = new FrameworkName(".NETStandard,Version=v1.6");
+#elif NET462
+            TargetFramework = new FrameworkName(".NETFramework,Version=v4.6.2");
+#elif NET45
+            TargetFramework = new FrameworkName(".NETFramework,Version=v4.5");
+#endif
         }
     }
 }

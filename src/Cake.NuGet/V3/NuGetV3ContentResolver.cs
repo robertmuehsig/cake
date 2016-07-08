@@ -38,7 +38,7 @@ namespace Cake.NuGet.V3
 
             // Get current framework.
             var provider = DefaultFrameworkNameProvider.Instance;
-            var current = NuGetFramework.Parse(_environment.GetTargetFramework().FullName, provider);
+            var current = NuGetFramework.Parse(_environment.Runtime.TargetFramework.FullName, provider);
 
             // Get all candidate files.
             var assemblies = _fileSystem.GetDirectory(path).GetFiles("*.dll", SearchScope.Recursive);

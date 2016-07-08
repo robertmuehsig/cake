@@ -67,8 +67,13 @@ namespace Cake.Core
         {
             _platform = platform;
             _runtime = runtime;
-            _applicationRoot = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
+            // Get the application root.
+            var assembly = AssemblyHelper.GetExecutingAssembly();
+            var path = System.IO.Path.GetDirectoryName(assembly.Location);
+            _applicationRoot = new DirectoryPath(path);
+
+            // Get the working directory.
             WorkingDirectory = new DirectoryPath(System.IO.Directory.GetCurrentDirectory());
         }
 
