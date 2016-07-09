@@ -62,66 +62,6 @@
         }
       }
     },
-    ".NETFramework,Version=v4.6.2": {
-      "xunit.abstractions/2.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net35/xunit.abstractions.dll": {}
-        },
-        "runtime": {
-          "lib/net35/xunit.abstractions.dll": {}
-        }
-      },
-      "xunit.assert.source/2.2.0-beta2-build3300": {
-        "type": "package"
-      },
-      "xunit.core/2.1.0": {
-        "type": "package",
-        "dependencies": {
-          "xunit.extensibility.core": "[2.1.0]",
-          "xunit.extensibility.execution": "[2.1.0]"
-        }
-      },
-      "xunit.extensibility.core/2.1.0": {
-        "type": "package",
-        "dependencies": {
-          "xunit.abstractions": "[2.0.0]"
-        },
-        "compile": {
-          "lib/dotnet/xunit.core.dll": {}
-        },
-        "runtime": {
-          "lib/dotnet/xunit.core.dll": {}
-        }
-      },
-      "xunit.extensibility.execution/2.1.0": {
-        "type": "package",
-        "dependencies": {
-          "xunit.extensibility.core": "[2.1.0]"
-        },
-        "compile": {
-          "lib/net45/xunit.execution.desktop.dll": {}
-        },
-        "runtime": {
-          "lib/net45/xunit.execution.desktop.dll": {}
-        }
-      },
-      "Cake.Core/1.0.0": {
-        "type": "project",
-        "framework": ".NETFramework,Version=v4.6.2",
-        "frameworkAssemblies": [
-          "System.Data",
-          "System.Xml",
-          "System.Xml.Linq"
-        ],
-        "compile": {
-          "net462/Cake.Core.dll": {}
-        },
-        "runtime": {
-          "net462/Cake.Core.dll": {}
-        }
-      }
-    },
     ".NETStandard,Version=v1.6": {
       "Microsoft.CSharp/4.0.1": {
         "type": "package",
@@ -5155,10 +5095,6 @@
       "xunit.assert.source >= 2.2.0-beta2-build3300"
     ],
     ".NETFramework,Version=v4.5": [
-      "System.Runtime",
-      "xunit.core >= 2.1.0"
-    ],
-    ".NETFramework,Version=v4.6.2": [
       "System.Runtime",
       "xunit.core >= 2.1.0"
     ],

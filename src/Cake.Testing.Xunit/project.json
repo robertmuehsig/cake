@@ -21,14 +21,6 @@
       "frameworkAssemblies": {
         "System.Runtime": { "type": "build" }
       }
-    },
-    "net462": {
-      "dependencies": {
-        "xunit.core": "2.1.0"
-      },
-      "frameworkAssemblies": {
-        "System.Runtime": { "type": "build" }
-      }
     }
   }
 }

@@ -23,14 +23,6 @@
         "System.Xml": { "type": "build" },
         "System.Xml.Linq": { "type": "build" }
       }
-    },
-
-    "net462": {
-      "frameworkAssemblies": {
-        "System.Data": { "type": "build" },
-        "System.Xml": { "type": "build" },
-        "System.Xml.Linq": { "type": "build" }
-      }
     }
   }
 }

@@ -29,17 +29,6 @@
         "System.IO.Compression": { "type": "build" },
         "System.IO.Compression.FileSystem": { "type": "build" }
       }
-    },
-
-    "net462": {
-      "frameworkAssemblies": {
-        "System.Xml": { "type": "build" },
-        "System.Net.Http": { "type": "build" },
-        "System.Runtime.Serialization": { "type": "build" },
-        "System.Runtime.Serialization.Json": { "type": "build" },
-        "System.IO.Compression": { "type": "build" },
-        "System.IO.Compression.FileSystem": { "type": "build" }
-      }
     }
   }
 }

@@ -45,28 +45,6 @@
         "System.Threading": { "type": "build" },
         "System.Threading.Tasks": { "type": "build" }
       }
-    },
-
-    "net462": {
-      "dependencies": {
-        "Autofac": "3.5.2",
-        "NuGet.Core": "2.8.6",
-        "Mono.CSharp": "4.0.0.143",
-        "Roslyn.Compilers.Common": "1.2.20906.2",
-        "Roslyn.Compilers.CSharp": "1.2.20906.2",
-        "Microsoft.CodeAnalysis.Analyzers": "1.0.0-rc2",
-        "Microsoft.CodeAnalysis.Common": "1.0.0-rc2",
-        "Microsoft.CodeAnalysis.Scripting.Common": "1.0.0-rc2",
-        "Microsoft.CodeAnalysis.Scripting.CSharp": "1.0.0-rc2",
-        "System.Collections.Immutable": "1.1.33-beta",
-        "System.Reflection.Metadata": "1.0.18-beta",
-        "System.Diagnostics.FileVersionInfo": "4.0.0",
-        "System.Threading.Thread": "4.0.0"
-      },
-      "frameworkAssemblies": {
-        "System.Threading": { "type": "build" },
-        "System.Threading.Tasks": { "type": "build" }
-      }
     }
   }
 }

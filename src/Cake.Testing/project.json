@@ -17,13 +17,6 @@
         "System.Threading.Tasks": { "type": "build" },
         "System.Web": { "type": "build" }
       }
-    },
-    "net462": {
-      "frameworkAssemblies": {
-        "System.Runtime": { "type": "build" },
-        "System.Threading.Tasks": { "type": "build" },
-        "System.Web": { "type": "build" }
-      }
     }
   }
 }

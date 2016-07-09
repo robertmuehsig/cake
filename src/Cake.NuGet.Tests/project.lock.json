@@ -5866,36 +5866,36 @@
       },
       "Cake.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.2",
+        "framework": ".NETFramework,Version=v4.5",
         "frameworkAssemblies": [
           "System.Data",
           "System.Xml",
           "System.Xml.Linq"
         ],
         "compile": {
-          "net462/Cake.Core.dll": {}
+          "net45/Cake.Core.dll": {}
         },
         "runtime": {
-          "net462/Cake.Core.dll": {}
+          "net45/Cake.Core.dll": {}
         }
       },
       "Cake.NuGet/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.2",
+        "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
           "Cake.Core": "1.0.0",
           "NuGet.Core": "2.8.6"
         },
         "compile": {
-          "net462/Cake.NuGet.dll": {}
+          "net45/Cake.NuGet.dll": {}
         },
         "runtime": {
-          "net462/Cake.NuGet.dll": {}
+          "net45/Cake.NuGet.dll": {}
         }
       },
       "Cake.Testing/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.2",
+        "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
           "Cake.Core": "1.0.0",
           "xunit.core": "2.2.0-beta2-build3300"
@@ -5906,15 +5906,15 @@
           "System.Web"
         ],
         "compile": {
-          "net462/Cake.Testing.dll": {}
+          "net45/Cake.Testing.dll": {}
         },
         "runtime": {
-          "net462/Cake.Testing.dll": {}
+          "net45/Cake.Testing.dll": {}
         }
       },
       "Cake.Testing.Xunit/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.2",
+        "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
           "Cake.Core": "1.0.0",
           "xunit.assert.source": "2.2.0-beta2-build3300",
@@ -5924,10 +5924,10 @@
           "System.Runtime"
         ],
         "compile": {
-          "net462/Cake.Testing.Xunit.dll": {}
+          "net45/Cake.Testing.Xunit.dll": {}
         },
         "runtime": {
-          "net462/Cake.Testing.Xunit.dll": {}
+          "net45/Cake.Testing.Xunit.dll": {}
         }
       }
     },
@@ -6300,36 +6300,36 @@
       },
       "Cake.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.2",
+        "framework": ".NETFramework,Version=v4.5",
         "frameworkAssemblies": [
           "System.Data",
           "System.Xml",
           "System.Xml.Linq"
         ],
         "compile": {
-          "net462/Cake.Core.dll": {}
+          "net45/Cake.Core.dll": {}
         },
         "runtime": {
-          "net462/Cake.Core.dll": {}
+          "net45/Cake.Core.dll": {}
         }
       },
       "Cake.NuGet/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.2",
+        "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
           "Cake.Core": "1.0.0",
           "NuGet.Core": "2.8.6"
         },
         "compile": {
-          "net462/Cake.NuGet.dll": {}
+          "net45/Cake.NuGet.dll": {}
         },
         "runtime": {
-          "net462/Cake.NuGet.dll": {}
+          "net45/Cake.NuGet.dll": {}
         }
       },
       "Cake.Testing/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.2",
+        "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
           "Cake.Core": "1.0.0",
           "xunit.core": "2.2.0-beta2-build3300"
@@ -6340,15 +6340,15 @@
           "System.Web"
         ],
         "compile": {
-          "net462/Cake.Testing.dll": {}
+          "net45/Cake.Testing.dll": {}
         },
         "runtime": {
-          "net462/Cake.Testing.dll": {}
+          "net45/Cake.Testing.dll": {}
         }
       },
       "Cake.Testing.Xunit/1.0.0": {
         "type": "project",
-        "framework": ".NETFramework,Version=v4.6.2",
+        "framework": ".NETFramework,Version=v4.5",
         "dependencies": {
           "Cake.Core": "1.0.0",
           "xunit.assert.source": "2.2.0-beta2-build3300",
@@ -6358,10 +6358,10 @@
           "System.Runtime"
         ],
         "compile": {
-          "net462/Cake.Testing.Xunit.dll": {}
+          "net45/Cake.Testing.Xunit.dll": {}
         },
         "runtime": {
-          "net462/Cake.Testing.Xunit.dll": {}
+          "net45/Cake.Testing.Xunit.dll": {}
         }
       }
     }

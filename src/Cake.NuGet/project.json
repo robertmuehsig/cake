@@ -22,14 +22,6 @@
       },
       "frameworkAssemblies": {
       }
-    },
-
-    "net462": {
-      "dependencies": {
-        "NuGet.Core": "2.8.6"
-      },
-      "frameworkAssemblies": {
-      }
     }
   }
 }
