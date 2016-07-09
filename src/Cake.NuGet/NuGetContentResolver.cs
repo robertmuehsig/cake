@@ -20,6 +20,11 @@ namespace Cake.NuGet
 
         public IReadOnlyCollection<IFile> GetFiles(DirectoryPath path, PackageType type)
         {
+            if(path == null)
+            {
+                throw new ArgumentNullException("path");
+            }
+
             if (type == PackageType.Addin)
             {
                 return GetAddinAssemblies(path);
@@ -35,6 +40,7 @@ namespace Cake.NuGet
                 }
                 return result;
             }
+
             throw new InvalidOperationException("Unknown resource type.");
         }
 
