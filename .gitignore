@@ -12,6 +12,7 @@
 .vs/
 .vscode/
 launchSettings.json
+project.lock.json
 
 # Build related
 build-results/
