@@ -4,7 +4,8 @@
   "frameworks": {
     "netstandard1.6": {
       "buildOptions": {
-        "define": [ "NETCORE" ]
+        "define": [ "NETCORE" ],
+        "allowUnsafe": true
       },
       "imports": "dnxcore50",
       "dependencies": {

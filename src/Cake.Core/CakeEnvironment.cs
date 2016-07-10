@@ -86,29 +86,7 @@ namespace Cake.Core
         /// </returns>
         public DirectoryPath GetSpecialPath(SpecialPath path)
         {
-#if NETCORE
-            throw new NotSupportedException("Not supported on .NET Core.");
-#else
-            switch (path)
-            {
-                case SpecialPath.ApplicationData:
-                    return new DirectoryPath(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
-                case SpecialPath.CommonApplicationData:
-                    return new DirectoryPath(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData));
-                case SpecialPath.LocalApplicationData:
-                    return new DirectoryPath(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
-                case SpecialPath.ProgramFiles:
-                    return new DirectoryPath(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles));
-                case SpecialPath.ProgramFilesX86:
-                    return new DirectoryPath(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86));
-                case SpecialPath.Windows:
-                    return new DirectoryPath(Environment.GetFolderPath(Environment.SpecialFolder.Windows));
-                case SpecialPath.LocalTemp:
-                    return new DirectoryPath(System.IO.Path.GetTempPath());
-            }
-            const string format = "The special path '{0}' is not supported.";
-            throw new NotSupportedException(string.Format(CultureInfo.InvariantCulture, format, path));            
-#endif
+            return SpecialPathHelper.GetFolderPath(_platform, path);
         }
 
         /// <summary>
